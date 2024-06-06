@@ -11,6 +11,7 @@ body {
 header {
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 .header-image {
@@ -20,11 +21,12 @@ header {
 }
 
 #background-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
 }
 
 .play-button {
@@ -57,3 +59,15 @@ header {
 footer {
     margin-top: 20px;
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header-image {
+        width: 80px;
+    }
+
+    .play-button {
+        width: 80%;
+    }
+}
+
