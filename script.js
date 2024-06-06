@@ -1,6 +1,11 @@
 // Falling ice cream emojis effect
 document.addEventListener('DOMContentLoaded', function() {
-    setInterval(createIceCreamEmoji, 300);
+    setInterval(() => {
+        let emojiCount = Math.floor(Math.random() * 10) + 1; // Randomly create between 1 and 10 emojis at a time
+        for (let i = 0; i < emojiCount; i++) {
+            createIceCreamEmoji();
+        }
+    }, 300);
 
     function createIceCreamEmoji() {
         const emoji = document.createElement('div');
@@ -52,4 +57,3 @@ audio.addEventListener('pause', () => {
 window.addEventListener('load', () => {
     audio.play();
 });
-
