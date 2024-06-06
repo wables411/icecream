@@ -43,7 +43,6 @@ header {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    background-color: #ff69b4; /* Fallback background color */
 }
 
 .play-button.paused {
