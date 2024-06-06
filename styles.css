@@ -53,6 +53,23 @@ header {
     z-index: 10;
 }
 
+.connect-wallet-button, .claim-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .content {
     text-align: center;
     padding: 20px;

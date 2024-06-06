@@ -6,6 +6,7 @@
     <title>Ice Cream So Good</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
 </head>
 <body>
     <header>
@@ -24,10 +25,12 @@
         <audio id="background-audio" loop>
             <source src="icecreamsogood.mp3" type="audio/mpeg">
         </audio>
+        <button id="connect-wallet" class="connect-wallet-button">Connect Wallet</button>
+        <button id="claim-token" class="claim-button" style="display:none;">Claim</button>
     </header>
     <div class="content">
         <h1 class="content-title">$ICECREAM SO GOOD</h1>
-        <p>🍦 𝒯𝐻𝐸 𝐿♥𝒱𝐸 𝒫𝐼𝐿𝐿𝐸𝒟 𝐼𝒞𝐸 𝒞𝑅𝐸𝒜𝑀 𝒞𝑂𝐼𝒩 𝒪𝒩 𝐵𝒜𝒮𝐸 🍦<p>
+        <p>🍦 𝒯𝐻𝐸 𝐿♥𝒱𝐸 𝒫𝐼𝐿𝐿𝐸𝒟 𝐼𝒞𝐸 𝒞𝑅𝐸𝒜𝑀 𝒞𝑂𝐼𝒩 𝒪𝒩 𝐵𝒜𝒮𝐸 🍦</p>
         <p>$icecream parlor under construction. come back soon for a tasty treat yum nom nom nom 🍦 
             <button class="follow-button" onclick="window.open('https://x.com/icecream_coin', '_blank')">follow</button> 
             for all $icecream updates 🍦
@@ -39,6 +42,6 @@
             <button class="buy-button">Buy $ICECREAM Token</button>
         </a>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
