@@ -1,11 +1,18 @@
 body {
-    font-family: 'Cookie', cursive;
+    font-family: 'Fredoka One', cursive;
     background-color: #ffe4e1;
     color: #000;
     margin: 0;
     padding: 0;
     font-size: 16px;
     line-height: 1.5;
+}
+
+.header-title {
+    font-family: 'Cookie', cursive;
+    color: #ff69b4;
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
 header {
@@ -15,9 +22,9 @@ header {
 }
 
 .header-image {
-    width: 100px;
+    width: 150px;
     height: auto;
-    margin: 5px;
+    margin: 10px;
 }
 
 #background-video {
@@ -37,6 +44,7 @@ header {
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .content {
