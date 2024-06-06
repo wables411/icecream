@@ -1,26 +1,3 @@
-// Falling ice cream emojis effect
-document.addEventListener('DOMContentLoaded', function() {
-    setInterval(createIceCreamEmoji, 300);
-
-    function createIceCreamEmoji() {
-        const emoji = document.createElement('div');
-        emoji.textContent = '🍦';
-        emoji.style.position = 'absolute';
-        emoji.style.left = `${Math.random() * window.innerWidth}px`;
-        emoji.style.top = '-50px';
-        emoji.style.fontSize = '24px';
-        emoji.style.transition = 'top 5s linear';
-        document.body.appendChild(emoji);
-
-        setTimeout(() => {
-            emoji.style.top = `${window.innerHeight}px`;
-            setTimeout(() => {
-                document.body.removeChild(emoji);
-            }, 5000);
-        }, 0);
-    }
-});
-
 // Play/pause functionality
 const audio = document.getElementById('background-audio');
 const playPauseButton = document.getElementById('play-pause-button');
@@ -52,4 +29,3 @@ audio.addEventListener('pause', () => {
 window.addEventListener('load', () => {
     audio.play();
 });
-
