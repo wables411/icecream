@@ -4,7 +4,7 @@ import { ethers } from 'ethers';
 
 // Create the client with your clientId
 const client = createThirdwebClient({ 
-  clientId: "YOUR_CLIENT_ID" // Replace with your actual client ID
+  clientId: "abbc426311cb661ab9bfb5714e5a6b59" // Replace with your actual client ID
 });
 
 // Connect to your contract
