@@ -49,7 +49,7 @@ header {
 .play-button.paused {
     background: url('pause-icon.png') no-repeat center center;
     background-size: contain;
-    background-color: #ff69b4; /* Fallback background color */
+    background-color: transparent; /* Transparent background */
 }
 
 .content {
