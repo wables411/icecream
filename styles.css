@@ -36,8 +36,8 @@ header {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 60px; /* Increase the size of the button */
+    height: 60px; /* Increase the size of the button */
     background: url('play-icon.png') no-repeat center center;
     background-size: contain;
     border: none;
@@ -97,3 +97,4 @@ footer {
 body {
     cursor: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/soft-ice-cream_1f366.png'), auto;
 }
+
