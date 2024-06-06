@@ -1,99 +1,70 @@
-body, html {
+body {
+    font-family: monospace;
+    background-color: #000;
+    color: #fff;
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: #ffecf0;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 header {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
     text-align: center;
     position: relative;
 }
 
 .header-image {
-    width: 100%;
-    max-width: 800px;
+    width: 100px;
     height: auto;
-    display: block;
-    margin: 0 auto;
+    margin: 5px;
 }
 
 #background-video {
-    width: 75%;
-    height: auto;
-    object-fit: contain; /* Ensures the entire video shows within the viewport */
-    display: block;
-    margin: 0 auto; /* Center the video horizontally */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .play-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 60px; /* Size of the button */
-    height: 60px; /* Size of the button */
-    background: url('play-icon.png') no-repeat center center;
-    background-size: contain;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
     border: none;
-    border-radius: 50%;
+    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
-    background-color: #ff69b4; /* Fallback background color */
-}
-
-.play-button.paused {
-    background: url('pause-icon.png') no-repeat center center;
-    background-size: contain;
-    background-color: #ff69b4; /* Same color as fallback */
 }
 
 .content {
     text-align: center;
-    color: #ff69b4;
     padding: 20px;
 }
 
-h1 {
-    font-family: 'Ice Cream Parlor', sans-serif;
-    font-size: 3em;
-    color: #ff69b4;
-    margin: 20px 0;
-}
-
-p {
-    font-size: 1.5em;
-    color: #ff69b4;
-    margin: 20px 0;
-}
-
-.follow-button {
+.follow-button, .buy-token-button {
+    padding: 10px 20px;
+    font-size: 16px;
     background-color: #ff69b4;
     color: white;
     border: none;
-    padding: 5px 10px;
-    font-size: 1em;
+    border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
-}
-
-.follow-button:hover {
-    background-color: #ff8fcf;
 }
 
 footer {
-    width: 100%;
-    text-align: center;
-    font-size: 0.9em;
-    color: #ff69b4;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px 0;
+    margin-top: 20px;
 }
 
-body {
-    cursor: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/soft-ice-cream_1f366.png'), auto;
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header-image {
+        width: 80px;
+    }
+
+    .play-button {
+        width: 80%;
+    }
 }
