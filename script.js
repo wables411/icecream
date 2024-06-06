@@ -4,10 +4,10 @@ function togglePlayPause() {
 
     if (audio.paused) {
         audio.play();
-        button.classList.remove('paused');
+        button.textContent = 'Pause';
     } else {
         audio.pause();
-        button.classList.add('paused');
+        button.textContent = 'Play';
     }
 }
 
