@@ -1,5 +1,6 @@
 const { MerkleTree } = require('merkletreejs');
 const keccak256 = require('keccak256');
+const fs = require('fs');
 
 const addresses = [
   '0x227c7df69d3ed1ae7574a1a7685fded90292eb48',
@@ -4956,18 +4957,13 @@ const addresses = [
   '0xff4d817184dcb4cb58bc2590bbf7373aa5e94b7c',
   '0xff5298bea2a52d99bfacbd9b29952198f8432faa',
   '0xff8d58f85a4f7199c4b9461f787cd456ad30e594',
-  '0xffa44977782c0377106ec18c9710c1f9fd89dc6e'
+  '0xffa44977782c0377106ec18c9710c1f9fd89dc6e',
+  '0xD6DF66f4A4b513BabdA9FAda87c1323d68aD17AB'
 ];
 
+// Create leaf nodes by hashing the addresses
 const leafNodes = addresses.map(addr => keccak256(addr));
 const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
 
 const rootHash = merkleTree.getRoot().toString('hex');
 console.log("Merkle Root:", rootHash);
-
-const proofs = addresses.reduce((acc, addr) => {
-  acc[addr] = merkleTree.getHexProof(keccak256(addr));
-  return acc;
-}, {});
-
-console.log("Merkle Proofs:", JSON.stringify(proofs, null, 2));

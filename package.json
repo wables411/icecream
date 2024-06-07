@@ -19,7 +19,8 @@
   "homepage": "https://github.com/wables411/icecream#readme",
   "dependencies": {
     "@thirdweb-dev/sdk": "^4.0.92",
-    "ethers": "^6.13.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^5.4.0",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.3.11",
     "web3": "^4.9.0"
