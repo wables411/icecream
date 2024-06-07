@@ -52,7 +52,7 @@ async function checkEligibility() {
 async function claimToken() {
     if (!selectedAccount) return;
     try {
-        await contract.claimTo(selectedAccount, 1); // Adjust the number of tokens to claim as needed
+        await contract.claimTo(selectedAccount, 2020); // Adjust the number of tokens to claim as needed
         document.getElementById('message').innerText = "Token claimed successfully!";
     } catch (error) {
         console.error(error);
