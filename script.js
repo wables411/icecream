@@ -74,9 +74,10 @@ function togglePlayPause() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('play-pause-button');
-    button.addEventListener('click', togglePlayPause);
-    
+    console.log("Script Loaded");
+    const playPauseButton = document.getElementById('play-pause-button');
+    playPauseButton.addEventListener('click', togglePlayPause);
+
     // Add falling ice cream emojis
     const emojis = ['🍦', '🍧', '🍨'];
     const numEmojis = 10;
@@ -89,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(emoji);
     }
 
-    document.getElementById('connect-wallet').addEventListener('click', connectWallet);
-    document.getElementById('claim-token').addEventListener('click', claimToken);
+    const connectWalletButton = document.getElementById('connect-wallet');
+    connectWalletButton.addEventListener('click', connectWallet);
+    const claimTokenButton = document.getElementById('claim-token');
+    claimTokenButton.addEventListener('click', claimToken);
 });
