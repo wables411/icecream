@@ -2,12 +2,10 @@ import { createThirdwebClient, getContract } from "thirdweb";
 import { defineChain } from "thirdweb/chains";
 import { ethers } from 'ethers';
 
-// Create the client with your clientId
 const client = createThirdwebClient({ 
-  clientId: "abbc426311cb661ab9bfb5714e5a6b59" // Replace with your actual client ID
+  clientId: "abbc426311cb661ab9bfb5714e5a6b59"
 });
 
-// Connect to your contract
 const contract = getContract({ 
   client, 
   chain: defineChain(8453), 
@@ -27,7 +25,7 @@ async function connectWallet() {
             document.getElementById('claim-token').style.display = 'block';
             checkEligibility();
         } catch (error) {
-            console.error(error);
+            console.error("Error connecting to wallet:", error);
         }
     } else {
         alert("Please install MetaMask!");
@@ -44,7 +42,7 @@ async function checkEligibility() {
             document.getElementById('claim-token').style.display = 'none';
         }
     } catch (error) {
-        console.error(error);
+        console.error("Error checking eligibility:", error);
         document.getElementById('message').innerText = "Error checking eligibility.";
     }
 }
@@ -55,7 +53,7 @@ async function claimToken() {
         await contract.claimTo(selectedAccount, 2020); // Adjust the number of tokens to claim as needed
         document.getElementById('message').innerText = "Token claimed successfully!";
     } catch (error) {
-        console.error(error);
+        console.error("Token claim failed:", error);
         document.getElementById('message').innerText = "Token claim failed.";
     }
 }
@@ -65,20 +63,18 @@ function togglePlayPause() {
     const button = document.getElementById('play-pause-button');
 
     if (audio.paused) {
-        audio.play();
-        button.textContent = 'Pause';
+        audio.play().then(() => {
+            button.textContent = 'Pause';
+        }).catch((error) => {
+            console.error('Audio play failed:', error);
+        });
     } else {
         audio.pause();
         button.textContent = 'Play';
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Script Loaded");
-    const playPauseButton = document.getElementById('play-pause-button');
-    playPauseButton.addEventListener('click', togglePlayPause);
-
-    // Add falling ice cream emojis
+function addFallingEmojis() {
     const emojis = ['🍦', '🍧', '🍨'];
     const numEmojis = 10;
     for (let i = 0; i < numEmojis; i++) {
@@ -89,9 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
         document.body.appendChild(emoji);
     }
+}
 
-    const connectWalletButton = document.getElementById('connect-wallet');
-    connectWalletButton.addEventListener('click', connectWallet);
-    const claimTokenButton = document.getElementById('claim-token');
-    claimTokenButton.addEventListener('click', claimToken);
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('connect-wallet').addEventListener('click', connectWallet);
+    document.getElementById('claim-token').addEventListener('click', claimToken);
+    document.getElementById('play-pause-button').addEventListener('click', togglePlayPause);
+    addFallingEmojis();
 });

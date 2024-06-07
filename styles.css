@@ -111,10 +111,10 @@ footer {
     top: 0;
     font-size: 24px;
     animation: fall linear infinite;
+    animation-duration: 5s; /* Added a default duration for the fall animation */
 }
 
-@media (min-width: 769px) {
-    .ice-cream-emoji {
-        display: block;
-    }
+/* Ensure the ice-cream-emoji elements are displayed on all screen sizes */
+.ice-cream-emoji {
+    display: block;
 }
