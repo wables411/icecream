@@ -4964,3 +4964,10 @@ const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
 
 const rootHash = merkleTree.getRoot().toString('hex');
 console.log("Merkle Root:", rootHash);
+
+const proofs = addresses.reduce((acc, addr) => {
+  acc[addr] = merkleTree.getHexProof(keccak256(addr));
+  return acc;
+}, {});
+
+console.log("Merkle Proofs:", JSON.stringify(proofs, null, 2));
