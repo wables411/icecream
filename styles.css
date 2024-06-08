@@ -1,3 +1,5 @@
+/* styles.css */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -88,5 +90,18 @@ footer {
 }
 
 body {
-    cursor: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/soft-ice-cream_1f366.png'), auto;
+    cursor: default;
+}
+
+.emoji {
+    position: absolute;
+    top: -50px;
+    font-size: 2rem;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
