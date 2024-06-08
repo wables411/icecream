@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream So Good</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@thirdweb-dev/sdk@latest/dist/index.umd.js"></script>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1 class="header-title">$ICECREAM SO GOOD</h1>
+        <div class="header-images">
+            <img src="%PUBLIC_URL%/figmataicecream.png" alt="figmataicecream" class="header-image">
+            <img src="%PUBLIC_URL%/miladyicecreamparlor.jpeg" alt="Milady Ice Cream Parlor" class="header-image">
+            <img src="%PUBLIC_URL%/remilioicecream.png" alt="remilio Ice Cream" class="header-image">
+            <img src="%PUBLIC_URL%/strawberryicecreamsq.png" alt="ticker" class="header-image">
+        </div>
+        <button id="play-pause-button" class="play-button">Play</button>
+        <audio id="background-audio" loop>
+            <source src="%PUBLIC_URL%/icecreamsogood.mp3" type="audio/mpeg">
+        </audio>
+        <video autoplay muted loop id="background-video">
+            <source src="%PUBLIC_URL%/melting.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="connect-wallet" class="connect-wallet-button">Connect Wallet</button>
+        <button id="claim-token" class="claim-button" style="display:none;">Claim</button>
+        <p id="message" class="message"></p>
+    </header>
+    <div id="root"></div> <!-- React will mount here -->
+    <div class="content">
+        <h1 class="content-title">$ICECREAM SO GOOD</h1>
+        <p>🍦 𝒯𝐻𝐸 𝐿♥𝒱𝐸 𝒫𝐼𝐿𝐿𝐸𝒟 𝐼𝒞𝐸 𝒞𝑅𝐸𝒜𝑀 𝒞𝑂𝐼𝒩 𝒪𝒩 𝐵𝒜𝒮𝐸 🍦</p>
+        <p>$icecream parlor under construction. come back soon for a tasty treat yum nom nom nom 🍦 
+            <button class="follow-button" onclick="window.open('https://x.com/icecream_coin', '_blank')">follow</button> 
+            for all $icecream updates 🍦
+        </p>
+        <footer>
+            🍦 CA 0x297ffE5933e02a975f413e62e9f6d903A43858b2
+        </footer>
+        <a href="https://tokepad.xyz/market/0xa8d54b72c0c141ef1b641d17a148422b995a2c6e" target="_blank">
+            <button class="buy-button">Buy $ICECREAM Token</button>
+        </a>
+    </div>
+    <script src="%PUBLIC_URL%/script.js" type="module"></script>
+</body>
 </html>
