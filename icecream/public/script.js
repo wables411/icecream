@@ -1,13 +1,11 @@
 const { ThirdwebSDK, ChainId } = thirdweb;
 
-// Initialize the Thirdweb SDK with Mainnet
 const sdk = new ThirdwebSDK(ChainId.Mainnet);
 
 let selectedAccount;
 const contractAddress = "0x2aDc4d57239754199A8F4B2F285466b941be793e";
 const contract = sdk.getNFTDrop(contractAddress);
 
-// Connect the user's wallet
 async function connectWallet() {
     if (window.ethereum) {
         try {
@@ -26,7 +24,6 @@ async function connectWallet() {
     }
 }
 
-// Check if the user is eligible to claim a token
 async function checkEligibility() {
     try {
         const isEligible = await contract.claimConditions.canClaim(selectedAccount);
@@ -42,7 +39,6 @@ async function checkEligibility() {
     }
 }
 
-// Claim the token
 async function claimToken() {
     if (!selectedAccount) return;
     try {
@@ -54,7 +50,6 @@ async function claimToken() {
     }
 }
 
-// Toggle play/pause for the background audio
 function togglePlayPause() {
     const audio = document.getElementById('background-audio');
     const button = document.getElementById('play-pause-button');
@@ -71,7 +66,6 @@ function togglePlayPause() {
     }
 }
 
-// Add falling ice cream emojis to the page
 function addFallingEmojis() {
     const emojis = ['🍦', '🍧', '🍨'];
     const numEmojis = 10;
@@ -85,7 +79,6 @@ function addFallingEmojis() {
     }
 }
 
-// Set up event listeners once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('connect-wallet').addEventListener('click', connectWallet);
     document.getElementById('claim-token').addEventListener('click', claimToken);
