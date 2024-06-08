@@ -1,6 +1,7 @@
-const { ThirdwebSDK, ChainId } = thirdweb;
+import { ThirdwebSDK, ChainId } from 'https://cdn.jsdelivr.net/npm/@thirdweb-dev/sdk@latest/dist/index.umd.js';
+import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers@5.0.0/dist/ethers.min.js';
 
-const sdk = new ThirdwebSDK(ChainId.Mainnet);
+const sdk = new ThirdwebSDK.ThirdwebSDK(ChainId.Mainnet);
 
 let selectedAccount;
 const contractAddress = "0x2aDc4d57239754199A8F4B2F285466b941be793e";
@@ -69,4 +70,19 @@ function togglePlayPause() {
 function addFallingEmojis() {
     const emojis = ['🍦', '🍧', '🍨'];
     const numEmojis = 10;
-    for (let i = 0; i < numEmojis; i+
+    for (let i = 0; i < numEmojis; i++) {
+        let emoji = document.createElement('div');
+        emoji.className = 'ice-cream-emoji';
+        emoji.style.left = `${Math.random() * 100}vw`;
+        emoji.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        document.body.appendChild(emoji);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('connect-wallet').addEventListener('click', connectWallet);
+    document.getElementById('claim-token').addEventListener('click', claimToken);
+    document.getElementById('play-pause-button').addEventListener('click', togglePlayPause);
+    addFallingEmojis();
+});
