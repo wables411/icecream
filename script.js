@@ -1,18 +1,10 @@
-import { createThirdwebClient, getContract } from "thirdweb";
-import { defineChain } from "thirdweb/chains";
-import { ethers } from 'ethers';
+const { ThirdwebSDK, ChainId } = thirdweb;
 
-const client = createThirdwebClient({ 
-  clientId: "abbc426311cb661ab9bfb5714e5a6b59"
-});
-
-const contract = getContract({ 
-  client, 
-  chain: defineChain(8453), 
-  address: "0x2aDc4d57239754199A8F4B2F285466b941be793e"
-});
+const sdk = new ThirdwebSDK(ChainId.Mainnet);
 
 let selectedAccount;
+const contractAddress = "0x2aDc4d57239754199A8F4B2F285466b941be793e";
+const contract = sdk.getNFTDrop(contractAddress);
 
 async function connectWallet() {
     if (window.ethereum) {
@@ -34,7 +26,7 @@ async function connectWallet() {
 
 async function checkEligibility() {
     try {
-        const isEligible = await contract.isEligibleToClaim(selectedAccount);
+        const isEligible = await contract.claimConditions.canClaim(selectedAccount);
         if (isEligible) {
             document.getElementById('message').innerText = "You are eligible to claim the token.";
         } else {
@@ -50,7 +42,7 @@ async function checkEligibility() {
 async function claimToken() {
     if (!selectedAccount) return;
     try {
-        await contract.claimTo(selectedAccount, 2020); // Adjust the number of tokens to claim as needed
+        await contract.claim(selectedAccount, 1); // Adjust the number of tokens to claim as needed
         document.getElementById('message').innerText = "Token claimed successfully!";
     } catch (error) {
         console.error("Token claim failed:", error);

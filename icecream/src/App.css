@@ -1,0 +1,121 @@
+/* src/App.css */
+body {
+  font-family: 'Fredoka One', cursive;
+  background-color: #ffe4e1;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.header-title {
+  font-family: 'Pacifico', cursive;
+  color: #ff69b4;
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+header {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-image {
+  max-width: 100%;
+  height: auto;
+  margin: 10px;
+}
+
+#background-video {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.play-button {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 182, 193, 0.7);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.connect-wallet-button, .claim-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+.follow-button, .buy-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .header-image {
+      width: 80%;
+  }
+
+  .play-button {
+      width: 80%;
+  }
+}
+
+/* Falling ice cream emojis */
+@keyframes fall {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(100vh); }
+}
+
+.ice-cream-emoji {
+  position: absolute;
+  top: 0;
+  font-size: 24px;
+  animation: fall linear infinite;
+  animation-duration: 5s; /* Added a default duration for the fall animation */
+}
+
+/* Ensure the ice-cream-emoji elements are displayed on all screen sizes */
+.ice-cream-emoji {
+  display: block;
+}
