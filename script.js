@@ -1,17 +1,18 @@
-document.addEventListener('mousemove', function(e) {
-    const emoji = document.createElement('div');
-    emoji.textContent = '🍦';
-    emoji.style.position = 'absolute';
-    emoji.style.left = `${e.clientX}px`;
-    emoji.style.top = `${e.clientY}px`;
-    emoji.style.fontSize = '24px';
-    emoji.style.transition = 'opacity 1s ease';
-    document.body.appendChild(emoji);
-    
-    setTimeout(() => {
-        emoji.style.opacity = '0';
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createEmoji = () => {
+        const emoji = document.createElement('div');
+        emoji.innerHTML = '🍦';
+        emoji.classList.add('emoji');
+        emoji.style.left = Math.random() * 100 + 'vw';
+        emoji.style.animationDuration = Math.random() * 2 + 3 + 's';
+        document.body.appendChild(emoji);
+
         setTimeout(() => {
-            document.body.removeChild(emoji);
-        }, 1000);
-    }, 500);
+            emoji.remove();
+        }, 5000);
+    };
+
+    setInterval(createEmoji, 300);
 });
